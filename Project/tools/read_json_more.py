@@ -13,8 +13,9 @@ class ReadJson(object):
 
 
 if __name__ == '__main__' :
-    ReadJson("login_more.json").read_json()
-    print(ReadJson("login_more.json").read_json())
+    rj=ReadJson("login_more.json").read_json()
+    print("读取json数据：%s"%(rj))
+    print(type(rj))
 
     datas = ReadJson("login_more.json").read_json()
     #新建空列表list，arrs
@@ -23,7 +24,7 @@ if __name__ == '__main__' :
     # 使用遍历获取所有values
     for data in datas.values():
         # data为两个login对应的值，dict类型
-        print(data)
+        print("data数据为：%s"%(data))
         print(type(data))
         # 将dict取值添加到元组中，再将元组添加到列表里
         arrs.append((data.get("url"),
@@ -32,6 +33,6 @@ if __name__ == '__main__' :
                     data.get("expect_resule"),
                     data.get("status_code")
                     ))
-        print(arrs)
+        print("arrs数据为：%s"%(arrs))
         print(type(arrs))
 
